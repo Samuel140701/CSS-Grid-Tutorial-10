@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+    background-color: red;
+}
+
+aside {
+    grid-area: sidebar;
+    background-color: green;
+}
+
+main {
+    grid-area: main;
+    background-color: yellow;
+}  
+
+footer {
+    grid-area: footer;
+    background-color: purple;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    background-color: ;
+    gap: 20px;
+}

@@ -3,13 +3,19 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Times New Roman', Times, serif;
+    height: 100vh;
+}
+
 .layout {
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-areas: 
-        "header header"
-        "sidebar main"
-        "footer footer";
+    "header header"
+    "sidebar main"
+    "footer footer";
+    height: 100vh;
 }
 
 header {
@@ -17,9 +23,61 @@ header {
     background-color: red;
 }
 
+header h2 {
+    display: flex;
+    margin-left: .5rem;
+    padding: .5rem;
+}
+
 aside {
     grid-area: sidebar;
     background-color: green;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    padding: 1rem;
+    gap: 10px;
+}
+
+aside h2 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 1 / 2;
+}
+
+.x-1 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 2 / 3;
+}
+
+.x-2 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 3 / 4;
+}
+
+.x-3 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 4 / 5;
+}
+
+.x-4 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 5 / 6;
+}
+
+.x-5 {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 5px;
+    grid-row: 6 / 7;
 }
 
 main {
@@ -27,14 +85,154 @@ main {
     background-color: yellow;
 }  
 
+main h2 {
+    text-align: center;
+    padding: 20px;
+}
+
 footer {
     grid-area: footer;
     background-color: purple;
 }
 
+footer h2 {
+    display: flex;
+    margin-left: .5rem;
+    padding: .5rem;  
+    justify-content: center;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    background-color: ;
     gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+
+.item {
+    background-color: #f2f2f2;
+    padding: 15px;
+    text-align: center;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "header"
+        "sidebar"
+        "main"
+        "footer";
+    }
+
+    header {
+    background-color: red;
+    grid-area: header;
+    }
+
+    header h2 {
+        display: flex;
+        margin-left: .5rem;
+        padding: .5rem;
+    }
+
+    aside {
+        grid-area: sidebar;
+        background-color: green;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "sidebar sidebar"
+        "x-1 x-2"
+        "x-3 x-4"
+        "x-5 x-5";
+        padding: 1rem;
+        gap: 10px;
+        height: 200px;
+    }
+
+    aside h2 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        grid-area: sidebar;
+        padding: 10px;
+    }
+
+    .x-1 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 10px;
+        grid-area: x-1;
+    }
+
+    .x-2 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 10px;
+        grid-area: x-2;
+    }
+
+    .x-3 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 10px;
+        grid-area: x-3;
+    }
+
+    .x-4 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 10px;
+        grid-area: x-4;
+    }
+
+    .x-5 {
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        padding: 10px;
+        grid-area: x-5;
+    }
+
+    main {
+        background-color: yellow;
+        grid-area: main;
+    }
+
+    main h2 {
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer {
+        background-color: purple;
+        grid-area: footer;
+    }
+
+    footer h2 {
+        display: flex;
+        margin-left: .5rem;
+        padding: .5rem;  
+        justify-content: center;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-content: center;
+        align-content: center;
+  
+    }
+
+    .item {
+        background-color: #f2f2f2;
+        padding: 10px;
+        text-align: center;
+        margin: 1rem;
+        border-radius: 10px;
+    }
 }
